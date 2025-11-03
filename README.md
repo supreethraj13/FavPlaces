@@ -1,4 +1,4 @@
-###Your Places - A Personal Places Journal
+### Your Places - A Personal Places Journal
 
 "Your Places" is a mobile application built with Flutter that allows users to create a personal journal of their favorite locations. Users can add new places by capturing an image, adding a title and description, and saving the precise location using their device's GPS or by selecting it manually from a map.
 
@@ -24,7 +24,7 @@ View Place Details: Tap on a place to see its details, including the full image 
 
 View on Map: Open the saved coordinates directly in a map view to see exactly where the place is located.
 
-##Core Technologies Used
+## Core Technologies Used
 
 This project highlights the use of several key technologies for modern Flutter development:
 
@@ -36,7 +36,7 @@ Maps API (via Maps_flutter or similar): Integrated to provide rich map functiona
 
 Native Camera (via image_picker package): Leverages the device's native camera hardware to capture and save images directly within the app.
 
-##Screenshots
+## Screenshots
 
 Home Screen
 
@@ -56,7 +56,7 @@ Place Details
 
 
 
-##Getting Started
+## Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
@@ -91,7 +91,7 @@ Run the app
 flutter run
 
 
-##Contributing
+## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
