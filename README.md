@@ -1,4 +1,4 @@
-### Your Places - A Personal Places Journal
+# Your Places - A Personal Places Journal
 
 "Your Places" is a mobile application built with Flutter that allows users to create a personal journal of their favorite locations. Users can add new places by capturing an image, adding a title and description, and saving the precise location using their device's GPS or by selecting it manually from a map.
 
