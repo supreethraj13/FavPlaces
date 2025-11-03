@@ -15,12 +15,14 @@ class Placelocation {
 class Place {
   final String id;
   final String title;
+  final String description; // --- ADDED THIS LINE ---
   final Placelocation location;
   final File image;
 
   Place({
     required this.id,
     required this.title,
+    required this.description, // --- ADDED THIS LINE ---
     required this.location,
     required this.image,
   });

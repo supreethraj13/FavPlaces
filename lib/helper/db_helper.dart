@@ -10,7 +10,8 @@ class DbHelper {
       onCreate: (db, version) {
         print('Creating database table "places"...');
         return db.execute(
-          'CREATE TABLE places(id TEXT PRIMARY KEY, title TEXT, img TEXT, loc_lat REAL, loc_lng REAL, address TEXT)',
+          // --- UPDATED THIS LINE ---
+          'CREATE TABLE places(id TEXT PRIMARY KEY, title TEXT, description TEXT, img TEXT, loc_lat REAL, loc_lng REAL, address TEXT)',
         );
       },
       version: 1,

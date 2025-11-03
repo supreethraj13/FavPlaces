@@ -17,6 +17,8 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titlecontroller = TextEditingController();
+  // --- ADDED CONTROLLER FOR DESCRIPTION ---
+  final _descriptionController = TextEditingController(); 
   File? _pickedimage;
   Placelocation? _placelocation;
 
@@ -30,6 +32,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
 
   void _saveplace() {
     if (_titlecontroller.text.isEmpty ||
+        // --- ADDED DESCRIPTION CHECK ---
+        _descriptionController.text.isEmpty || 
         _pickedimage == null ||
         _placelocation == null) {
       // You could show a snackbar error here
@@ -38,7 +42,13 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     Provider.of<GreatPlaces>(
       context,
       listen: false,
-    ).addPlace(_titlecontroller.text, _pickedimage!, _placelocation!);
+    ).addPlace(
+      _titlecontroller.text,
+      // --- PASSED THE DESCRIPTION ---
+      _descriptionController.text, 
+      _pickedimage!,
+      _placelocation!,
+    );
     Navigator.of(context).pop();
   }
 
@@ -47,26 +57,34 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Add places')),
       body: Column(
-        // crossAxisAlignment.stretch is good!
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                // Increased padding for better spacing
-                padding: const EdgeInsets.all(16.0), 
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     TextField(
                       controller: _titlecontroller,
                       decoration: const InputDecoration(
                         labelText: 'Title',
-                        // Added an outline border
-                        border: OutlineInputBorder(), 
+                        border: OutlineInputBorder(),
                       ),
                     ),
-                    // Increased spacing
-                    const SizedBox(height: 16), 
+                    const SizedBox(height: 16),
+                    // --- ADDED DESCRIPTION TEXTFIELD ---
+                    TextField(
+                      controller: _descriptionController,
+                      decoration: const InputDecoration(
+                        labelText: 'Description',
+                        border: OutlineInputBorder(),
+                      ),
+                      maxLines: 3, // Makes it a multi-line box
+                      keyboardType: TextInputType.multiline,
+                    ),
+                    // ---------------------------------
+                    const SizedBox(height: 16),
                     ImageInput(_selectimage),
                     const SizedBox(height: 16),
                     LocationInput(_selectedloc),
@@ -75,25 +93,19 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
               ),
             ),
           ),
-          // --- Improved Button Styling ---
           Padding(
-            // Added padding to keep it from the screen edges/safe area
-            padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0), 
+            padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
             child: ElevatedButton.icon(
               icon: const Icon(Icons.add),
               label: const Text('Add place'),
               onPressed: _saveplace,
               style: ElevatedButton.styleFrom(
-                // Made the button taller
-                padding: const EdgeInsets.symmetric(vertical: 16.0), 
-                // Rounded corners
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                // Made text larger
                 textStyle: Theme.of(context).textTheme.titleMedium,
-                // Removed the default splash/tap padding
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap, 
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 elevation: 5,
               ),
             ),
