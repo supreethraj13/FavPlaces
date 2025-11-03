@@ -60,7 +60,7 @@ Place Details
 
 To get a local copy up and running, follow these simple steps.
 
-Prerequisites
+### Prerequisites
 
 Flutter SDK (e.g., 3.x.x)
 
@@ -68,25 +68,25 @@ An emulator or a physical device
 
 API Key for the Maps API (configured for Android/iOS)
 
-Installation
+### Installation
 
-Clone the repo
+#### Clone the repo
 
-git clone [https://github.com/your-username/your-places-app.git](https://github.com/your-username/your-places-app.git)
+git clone [https://github.com/supreethraj13/FavPlaces](https://github.com/supreethraj13/FavPlaces)
 
 
-Install packages
+### Install packages
 
 flutter pub get
 
 
-Configure API Keys
+### Configure API Keys
 
 Add your Google Maps API key to android/app/src/main/AndroidManifest.xml (for Android).
 
 Add your Google Maps API key to ios/Runner/AppDelegate.swift (for iOS).
 
-Run the app
+### Run the app
 
 flutter run
 
@@ -104,3 +104,4 @@ Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
+
