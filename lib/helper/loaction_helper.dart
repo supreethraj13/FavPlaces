@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-
-const GOOGLE_api_key = 'AIzaSyDskZPJRTcd9q8A9WfkXQeGtk4W8nQOgbY';
+final String? GOOGLE_api_key = dotenv.env['GOOGLEapi_key'];
 
 class LoactionHelper {
   static String locationpreviewimg({
